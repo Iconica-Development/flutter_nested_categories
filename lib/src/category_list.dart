@@ -212,10 +212,13 @@ class _CategoryColumnState extends State<_CategoryColumn> {
               padding: EdgeInsets.zero,
             ),
             const SizedBox(width: 8),
-            Text(
-              widget.category.name,
-              style: styleOfCategory,
-            ),
+            if (widget.category.customTitle != null)
+              widget.category.customTitle!
+            else
+              Text(
+                widget.category.name!,
+                style: styleOfCategory,
+              ),
           ],
         ),
       );
@@ -223,15 +226,19 @@ class _CategoryColumnState extends State<_CategoryColumn> {
   Widget _buildNonCollapsibleHeader(TextStyle styleOfCategory) =>
       widget.headerCentered
           ? Center(
-              child: Text(
-                widget.category.name,
-                style: styleOfCategory,
-              ),
+              child: widget.category.customTitle != null
+                  ? widget.category.customTitle!
+                  : Text(
+                      widget.category.name!,
+                      style: styleOfCategory,
+                    ),
             )
-          : Text(
-              widget.category.name,
-              style: styleOfCategory,
-            );
+          : widget.category.customTitle != null
+              ? widget.category.customTitle!
+              : Text(
+                  widget.category.name!,
+                  style: styleOfCategory,
+                );
 
   Widget _buildNestedCategoryList() => CategoryList(
         content: widget.category.nestedCategories,

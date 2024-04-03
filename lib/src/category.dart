@@ -7,7 +7,12 @@ import "package:flutter/widgets.dart";
 class Category {
   const Category({
     /// The name of the category.
-    required this.name,
+    this.name,
+
+    /// Optional custom title widget for the category. This will be displayed
+    /// at the top of the category. If set, the text title will be ignored.
+    /// This will be displayed before the content of the category.
+    this.customTitle,
 
     /// The content of the category. This can be anything, but is usually
     /// a list of widgets.
@@ -23,9 +28,13 @@ class Category {
     ///
     /// Default is an empty list.
     this.nestedCategories = const <Category>[],
-  });
+  }) : assert(
+          name != null || customTitle != null,
+          "A name or a custom title must be set",
+        );
 
-  final String name;
+  final String? name;
+  final Widget? customTitle;
   final List<Category> nestedCategories;
   final List<Widget> content;
 }
