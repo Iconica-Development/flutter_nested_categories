@@ -193,6 +193,23 @@ class _CategoryColumnState extends State<_CategoryColumn> {
     );
   }
 
+  String? formatCategoryName() {
+    var name = widget.category.name;
+    if (name == null) return null;
+
+    switch (widget.headerStyling?.capitalization) {
+      case CategoryHeaderCapitalization.capitalizeFirstLetter:
+        return name[0].toUpperCase() + name.substring(1);
+      case CategoryHeaderCapitalization.lowercase:
+        return name.toLowerCase();
+      case CategoryHeaderCapitalization.uppercase:
+        return name.toUpperCase();
+      case CategoryHeaderCapitalization.none:
+      default:
+        return name;
+    }
+  }
+
   Widget _buildCollapsibleHeader(TextStyle styleOfCategory) => InkWell(
         onTap: () {
           setState(() {
@@ -216,7 +233,7 @@ class _CategoryColumnState extends State<_CategoryColumn> {
               widget.category.customTitle!
             else
               Text(
-                widget.category.name!,
+                formatCategoryName()!,
                 style: styleOfCategory,
               ),
           ],
@@ -229,14 +246,14 @@ class _CategoryColumnState extends State<_CategoryColumn> {
               child: widget.category.customTitle != null
                   ? widget.category.customTitle!
                   : Text(
-                      widget.category.name!,
+                      formatCategoryName()!,
                       style: styleOfCategory,
                     ),
             )
           : widget.category.customTitle != null
               ? widget.category.customTitle!
               : Text(
-                  widget.category.name!,
+                  formatCategoryName()!,
                   style: styleOfCategory,
                 );
 

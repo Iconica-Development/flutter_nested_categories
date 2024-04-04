@@ -5,5 +5,6 @@
 library flutter_nested_categories;
 
 export "src/category.dart";
+export "src/category_header_capitalization.dart";
 export "src/category_header_styling.dart";
 export "src/category_list.dart";

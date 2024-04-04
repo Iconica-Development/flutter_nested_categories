@@ -29,10 +29,11 @@ class MyApp extends StatelessWidget {
             },
             defaultStyle:
                 theme.textTheme.titleLarge!.copyWith(color: Colors.green),
+            capitalization: CategoryHeaderCapitalization.uppercase,
           ),
           content: [
             Category(
-              name: "Category 1",
+              name: "category 1",
               content: [
                 const Text("Content 1"),
                 Image.network(
