@@ -4,15 +4,15 @@ import "package:flutter/widgets.dart";
 /// The headers are the names of the categories.
 class CategoryHeaderStyling {
   const CategoryHeaderStyling({
-    /// The styles for the headers. The key is the depth of the category.
-    /// The value is the text style for the header.
-    required this.headerStyles,
-
     /// The default style for the headers. This will be used if the depth
     /// is not found in the [headerStyles].
-    this.defaultStyle,
+    required this.defaultStyle,
+
+    /// The styles for the headers. The key is the depth of the category.
+    /// The value is the text style for the header.
+    this.headerStyles = const {},
   });
 
   final Map<int, TextStyle?> headerStyles;
-  final TextStyle? defaultStyle;
+  final TextStyle defaultStyle;
 }

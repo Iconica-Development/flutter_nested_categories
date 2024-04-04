@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
               2: theme.textTheme.titleLarge?.copyWith(color: Colors.blue),
             },
             defaultStyle:
-                theme.textTheme.titleLarge?.copyWith(color: Colors.green),
+                theme.textTheme.titleLarge!.copyWith(color: Colors.green),
           ),
           content: [
             Category(
