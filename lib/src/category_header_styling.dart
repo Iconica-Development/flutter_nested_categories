@@ -5,20 +5,20 @@ import "package:flutter_nested_categories/src/category_header_capitalization.dar
 /// The headers are the names of the categories.
 class CategoryHeaderStyling {
   const CategoryHeaderStyling({
-    /// The default style for the headers. This will be used if the depth
-    /// is not found in the [headerStyles].
     required this.defaultStyle,
-
-    /// The capitalization of the headers. This is used to determine how the
-    /// headers should be displayed.
     this.capitalization = CategoryHeaderCapitalization.none,
-
-    /// The styles for the headers. The key is the depth of the category.
-    /// The value is the text style for the header.
     this.headerStyles = const {},
   });
 
+  /// The styles for the headers. The key is the depth of the category.
+  /// The value is the text style for the header.
   final Map<int, TextStyle?> headerStyles;
+
+  /// The capitalization of the headers. This is used to determine how the
+  /// headers should be displayed.
   final CategoryHeaderCapitalization capitalization;
+
+  /// The default style for the headers. This will be used if the depth
+  /// is not found in the [headerStyles].
   final TextStyle defaultStyle;
 }
