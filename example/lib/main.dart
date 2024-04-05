@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_nested_categories/flutter_nested_categories.dart';
+import "package:flutter/material.dart";
+import "package:flutter_nested_categories/flutter_nested_categories.dart";
 
 void main() {
   runApp(const MyApp());
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
               content: [
                 const Text("Content 1"),
                 Image.network(
-                    "https://via.placeholder.com/150?text=Content+2+Image")
+                    "https://via.placeholder.com/150?text=Content+2+Image",),
               ],
               nestedCategories: [
                 const Category(
