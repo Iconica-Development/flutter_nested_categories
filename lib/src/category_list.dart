@@ -161,17 +161,14 @@ class _CategoryColumnState extends State<_CategoryColumn> {
       var name = widget.category.name;
       if (name == null) return null;
 
-      switch (widget.headerStyling?.capitalization) {
-        case CategoryHeaderCapitalization.capitalizeFirstLetter:
-          return name[0].toUpperCase() + name.substring(1);
-        case CategoryHeaderCapitalization.lowercase:
-          return name.toLowerCase();
-        case CategoryHeaderCapitalization.uppercase:
-          return name.toUpperCase();
-        case CategoryHeaderCapitalization.none:
-        default:
-          return name;
-      }
+      return switch (widget.headerStyling?.capitalization) {
+        CategoryHeaderCapitalization.capitalizeFirstLetter =>
+          name[0].toUpperCase() + name.substring(1),
+        CategoryHeaderCapitalization.lowercase => name.toLowerCase(),
+        CategoryHeaderCapitalization.uppercase => name.toUpperCase(),
+        CategoryHeaderCapitalization.none => name,
+        _ => name,
+      };
     }
 
     Widget buildCollapsibleHeader(TextStyle styleOfCategory) => InkWell(
