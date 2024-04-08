@@ -1,39 +1,68 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# flutter_nested_categories
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+This Flutter component allows you to easily create nested categories that are very
+customizable.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+* Nested Categories
+* Collapsible Categories
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+You can build a nested category using the `CategoryList` class, like this:
 
 ```dart
-const like = 'sample';
+CategoryList(
+    content: [
+        Category(
+            name: "Category 1",
+            content: [
+                const Text("Content 1"),
+                const Text("Content 2"),
+            ],
+            nestedCategories: [
+                Category(
+                    name: "Category 1.1",
+                    content: [
+                    const Text("Content 1.1"),
+                    const Text("Content 1.2"),
+                    ],
+                ),
+            ],
+        ),
+    ],
+),
 ```
 
-## Additional information
+You have a bunch of customization options available as well, such as:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+* Setting a (text)title (and title styling/center),
+* Setting a custom title,
+* Collapsible categories,
+* Header styling.
+
+For a more detailed example you can see the [example](https://github.com/Iconica-Development/flutter_nested_categories/tree/main/example).
+
+Or, you could run the example yourself:
+```
+git clone https://github.com/Iconica-Development/flutter_nested_categories.git
+
+cd flutter_nested_categories
+
+cd example
+
+flutter run
+```
+
+## Issues
+
+Please file any issues, bugs or feature request as an issue on our [GitHub](https://github.com/Iconica-Development/flutter_nested_categories) page. Commercial support is available if you need help with integration with your app or services. You can contact us at [support@iconica.nl](mailto:support@iconica.nl).
+
+## Want to contribute
+
+If you would like to contribute to the component (e.g. by improving the documentation, solving a bug or adding a cool new feature), please carefully review our [contribution guide](./CONTRIBUTING.md) and send us your [pull request](https://github.com/Iconica-Development/flutter_nested_categories/pulls).
+
+## Author
+
+This flutter_thermal_printer for Flutter is developed by [Iconica](https://iconica.nl). You can contact us at <support@iconica.nl>

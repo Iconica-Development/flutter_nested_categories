@@ -1,3 +1,5 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* Initial Nested Category functionality.
+* Title of categories
+* Collapsible categories
