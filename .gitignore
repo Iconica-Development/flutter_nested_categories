@@ -47,3 +47,6 @@ app.*.map.json
 
 # env
 *dotenv
+
+# FVM Version Cache
+.fvm/
